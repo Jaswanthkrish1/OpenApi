@@ -1,0 +1,42 @@
+<head>
+
+<script type="text/javascript" >
+Function pt(){
+const user = 'jaswanth2@gmail.com';
+const apiUrl = `http://localhost:8080/${user}/api/reg`;
+
+const postData = {
+  name: 'John Doe',
+  email: 'johndoe@example.com',
+  username:'jaswanth'
+ 
+};
+
+fetch(apiUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(postData)
+})
+.then(response => {
+  if (response.ok) {
+    // Request succeeded
+    console.log('Registration successful');
+  } else {
+    // Request failed
+    console.log('Registration failed');
+  }
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+}</script>
+</head>
+<div>
+
+  <h1>Welcome</h1>
+  
+  <button onclick="pt()">Click</button>
+
+</div>
